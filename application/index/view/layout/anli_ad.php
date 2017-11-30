@@ -1,0 +1,1 @@
+<div class=""><a <?= \app\common\model\Ad::urlOpen($row_ad->url,$row_ad->new_window)?>></a><img src="__IMGURL__{$row_ad->img}" width="100%" height="345" /></div>

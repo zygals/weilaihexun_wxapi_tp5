@@ -30,7 +30,7 @@
                 return ['code'=>__LINE__,'msg'=>'暂无资讯'];
             }
 
-            $list->cont= preg_replace("/<img src=\"/editor/im", '<img src="http://www.weilaihexun.com/editor',$list->cont );
+            $list->cont= preg_replace("/<img src=\"\/editor/im", '<img src="http://www.weilaihexun.com/editor',$list->cont );
             //dump($list->cont);exit;
             return ['code'=>0,'msg'=>'article/getInfo','data'=>$list];
         }

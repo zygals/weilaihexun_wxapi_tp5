@@ -25,4 +25,9 @@
 
             return json(Article::getList($data));
         }
+
+        public function recent(){
+
+            return json(Article::getRecent());
+        }
     }

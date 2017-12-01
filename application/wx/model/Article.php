@@ -16,7 +16,7 @@
         public static  function  getNew(){
             $where = ['article.st' => ['<>', 0]];
             $order = "create_time desc";
-            $list = self::where($where)->order($order)->select();
+            $list = self::where($where)->order($order)->paginate(4);
             if(!count($list)>0){
                 return ['code'=>__LINE__,'msg'=>'暂无资讯'];
             }

@@ -4,4 +4,4 @@ composer.lock
 thinkphp
 public/upload
 runtime
-
+public/index.php

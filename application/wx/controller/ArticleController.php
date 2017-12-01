@@ -6,6 +6,7 @@
     use think\Request;
 
     class ArticleController extends Controller{
+
         /**
          * 资讯列表页
          * @return \think\response\Json

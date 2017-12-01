@@ -1,17 +1,15 @@
 <?php
     namespace app\wx\model;
-    use app\common\model\Base;
-    use think\model;
-
-    class Article extends Base{
-        public function getStAttr($value) {
+    use think\Model;
+    class Article extends Model {
+       /* public function getStAttr($value) {
             $status = [0 => 'deleted', 1 => '正常', 2 => '不显示'];
             return $status[$value];
         }
         public function getIndexShowAttr($value) {
             $status = [0 => '否', 1 => '是'];
             return $status[$value];
-        }
+        }*/
 
         public static  function  getNew(){
             $where = ['article.st' => ['<>', 0]];

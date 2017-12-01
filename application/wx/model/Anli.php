@@ -5,7 +5,7 @@ class Anli extends Model{
 
     public static function getList(){
         $list_ = self::where(['anli.st'=>'1','anli.sort'=>'asc'])->field('anli.id,anli.name,img,func_ids,cate_anli.name cate_name')->join('cate_anli','anli.cate_anli_id=cate_anli.id')->paginate(8);
-        if(empty($list_)){
+        if($list_->isEmpty()){
             return ['code'=>__LINE__];
         }
         foreach ($list_ as $k=>$anli){

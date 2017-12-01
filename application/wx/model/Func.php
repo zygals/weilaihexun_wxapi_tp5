@@ -1,14 +1,20 @@
 <?php
 
-namespace app\common\model;
+namespace app\wx\model;
 
 use think\Model;
 
-class CateShipin extends model {
+class Func extends Model
+{
 
+	public function getStAttr($value)
+	{
+		$status = [0=>'delete',1=>'正常'];
+		return $status[$value];
+	}
 
-    public static function getList($data=[]) {
-
+    //分页查询
+	public static function getList($data=[]){
         $where = ['st' => ['=',1]];
         $order = "create_time desc";
         if (!empty($data['paixu'])) {
@@ -20,6 +26,10 @@ class CateShipin extends model {
         $list_ = self::where($where)->order($order)->select();
 
         return $list_;
-    }
+	}
 
+	public static function getNames($ids){
+	   $names= self::where(['id'=>['in',$ids]])->column('name');
+	   return implode('、',$names);
+    }
 }

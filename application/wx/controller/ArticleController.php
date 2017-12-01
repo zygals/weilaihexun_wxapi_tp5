@@ -22,6 +22,7 @@
             if($res !== true){
                 return json(['code' => __LINE__, 'msg' => 'id错误']);
             }
+            $list->cont= preg_replace('/<img src="\/editor/im', '<img src="http://www.weilaihexun.com/editor',$list->cont );
             return json(Article::getList($data));
         }
     }

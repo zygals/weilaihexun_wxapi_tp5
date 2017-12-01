@@ -38,7 +38,7 @@
             return ['code'=>0,'msg'=>'article/getInfo','data'=>$list];
         }
         public static function getRecent(){
-            $list_ = self::where(['st'=>1])->field('id,name')->limit(2)->order('create_time desc')->select();
+            $list_ = self::where(['st'=>1])->field('id,name,create_time')->limit(2)->order('create_time desc')->select();
             if(empty($list_)){
                 return ['code'=>__LINE__];
             }

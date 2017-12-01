@@ -4,7 +4,8 @@ use think\Model;
 class Anli extends Model{
 
     public static function getList(){
-        $list_ = self::where(['anli.st'=>'1','anli.sort'=>'asc'])->field('anli.id,anli.name,img,func_ids,cate_anli.name cate_name')->join('cate_anli','anli.cate_anli_id=cate_anli.id')->paginate(8);
+        $list_ = self::where(['anli.st'=>'1'])->field('anli.id,anli.name,img,func_ids,cate_anli.name cate_name')->join('cate_anli','anli.cate_anli_id=cate_anli.id')->order('anli.sort asc')->paginate(8);
+        //dump($list_);
         if($list_->isEmpty()){
             return ['code'=>__LINE__];
         }

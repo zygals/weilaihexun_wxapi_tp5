@@ -20,6 +20,11 @@
             if(!count($list)>0){
                 return ['code'=>__LINE__,'msg'=>'暂无资讯'];
             }
+            foreach ($list as $k => $value) {
+                if (mb_strlen($value->charm, "UTF8") >129 ) {
+                    $list[$k]->charm = mb_substr($value->charm, 0, 130, 'utf-8') . '......';
+                }
+            }
             return ['code'=>0,'msg'=>'article/index','data'=>$list];
         }
 

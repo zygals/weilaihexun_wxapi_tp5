@@ -29,7 +29,7 @@
             if(!count($list)>0){
                 return ['code'=>__LINE__,'msg'=>'暂无资讯'];
             }
-            $list->cont= preg_replace("/\"editor/im", '"http://www.weilaihexun.com/editor',$list->cont );
+            $list->cont= preg_replace('/<img src="\/editor/im', '<img src="http://www.weilaihexun.com/editor',$list->cont );
             return ['code'=>0,'msg'=>'article/getInfo','data'=>$list];
         }
     }
